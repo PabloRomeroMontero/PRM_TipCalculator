@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Tip Calculator</string>
+    <string name="cardView_Total">Total</string>
+    <string name="carView_perCent">%</string>
+    <string name="cardView_Bill">Bill</string>
+    <string name="CardViewBottonReset">Reset</string>
+    <string name="cardViewtipPerCent">Tip%</string>
+    <string name="cardViewTip">Tip</string>
+    <string name="menu_save">save</string>
+    <string name="menuShowList">ShowList</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="CVRoundedDinner">Dinner</string>
+    <string name="CVRoundedPerDinner">PerDinner</string>
+    <string name="CVRoundedRounded">Rounded</string>
+    <string name="savedRestaurant">Saved Sucesfully</string>
+</resources>

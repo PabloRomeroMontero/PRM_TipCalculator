@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvBill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/cardViewBillCL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cardView_Total"
+                app:layout_constraintBottom_toTopOf="@+id/textTotal"
+                app:layout_constraintEnd_toEndOf="@+id/textTotal"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/textTotal"
+                app:layout_constraintTop_toBottomOf="@+id/textTip" />
+
+            <EditText
+                android:id="@+id/textTotal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="24dp"
+                android:ems="10"
+                android:inputType="number"
+                android:textAlignment="textEnd"
+                android:focusable="false"
+                app:layout_constraintBottom_toTopOf="@+id/buttonReset"
+                app:layout_constraintEnd_toStartOf="@+id/iconEuro3"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/iconEuro3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:drawableStart="@drawable/ic_euro_symbol_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textTotal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textTotal" />
+
+            <TextView
+                android:id="@+id/lblPerCent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/carView_perCent"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textTipPerCents"
+                app:layout_constraintEnd_toStartOf="@id/textTip"
+                app:layout_constraintStart_toEndOf="@+id/textTipPerCents"
+                app:layout_constraintTop_toTopOf="@+id/textTipPerCents" />
+
+            <EditText
+                android:id="@+id/textTip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:inputType="number"
+                android:textAlignment="textEnd"
+                android:focusable="false"
+                app:layout_constraintBottom_toBottomOf="@+id/textTipPerCents"
+                app:layout_constraintEnd_toStartOf="@id/CBiconEuro2"
+                app:layout_constraintStart_toEndOf="@+id/lblPerCent"
+                app:layout_constraintTop_toTopOf="@+id/textTipPerCents"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/textTipPerCents"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:ems="10"
+                android:inputType="number"
+                android:textAlignment="textEnd"
+                app:layout_constraintBottom_toTopOf="@id/lblTotal"
+                app:layout_constraintEnd_toStartOf="@id/lblPerCent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblTipPerCent" />
+
+            <TextView
+                android:id="@+id/lblBill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/cardView_Bill"
+                app:layout_constraintBottom_toTopOf="@+id/textBill"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.856"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/textBill"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:textAlignment="textEnd"
+                android:inputType="number"
+                app:layout_constraintBottom_toTopOf="@id/lblTipPerCent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iconEuro"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblBill" />
+
+            <TextView
+                android:id="@+id/iconEuro"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:drawableStart="@drawable/ic_euro_symbol_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textBill"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textBill"
+                app:layout_constraintTop_toTopOf="@+id/lblBill"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/CBiconEuro2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:drawableStart="@drawable/ic_euro_symbol_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textTip"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textTip"
+                app:layout_constraintTop_toTopOf="@+id/textTip" />
+
+            <Button
+                android:id="@+id/buttonReset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/CardViewBottonReset"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.825"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/lblTipPerCent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="132dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/cardViewtipPerCent"
+                app:layout_constraintBottom_toTopOf="@+id/textTipPerCents"
+                app:layout_constraintEnd_toEndOf="@+id/textTipPerCents"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textBill" />
+
+            <TextView
+                android:id="@+id/lblTip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="268dp"
+                android:text="@string/cardViewTip"
+                app:layout_constraintBottom_toBottomOf="@+id/textTip"
+                app:layout_constraintEnd_toEndOf="@+id/textTip"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/textTip"
+                app:layout_constraintTop_toBottomOf="@+id/textBill"
+                app:layout_constraintVertical_bias="0.215" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
