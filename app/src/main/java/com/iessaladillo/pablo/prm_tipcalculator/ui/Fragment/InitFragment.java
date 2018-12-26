@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -48,11 +49,13 @@ public class InitFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                b.includeCardBill.textBill.setText(
+                        String.valueOf(ValidateUtils.validateBill(b.includeCardBill.textBill.getText().toString())));
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                calculateAll();
+
             }
         });
         b.includeCardBill.textTipPerCents.addTextChangedListener(new TextWatcher() {
@@ -68,7 +71,7 @@ public class InitFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                calculateAll();
+
             }
         });
         b.includeCardRounded.textDinner.addTextChangedListener(new TextWatcher() {
@@ -84,7 +87,7 @@ public class InitFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                calculateAll();
+
             }
         });
         b.includeCardBill.buttonReset.setOnClickListener(v -> resetOne(true));
@@ -124,11 +127,11 @@ public class InitFragment extends Fragment {
         b.includeCardBill.textTotal.setText(String.valueOf(calculateTotal(bill, tipPerCent)));
         b.includeCardRounded.textPerDinner.setText(String.valueOf(calculatePerDinner(bill, tipPerCent, dinners)));
         b.includeCardRounded.textRounded.setText(String.valueOf(calculateRounded(bill, tipPerCent, dinners)));
-    recalculateRestaurant();
+        recalculateRestaurant();
 
     }
 
-    private void recalculateRestaurant(){
+    private void recalculateRestaurant() {
         vm.getRestaurant().setDinners(Integer.parseInt(b.includeCardRounded.textDinner.getText().toString()));
         vm.getRestaurant().setRounded(Integer.parseInt(b.includeCardRounded.textRounded.getText().toString()));
         vm.getRestaurant().setPerDinner(Integer.parseInt(b.includeCardRounded.textPerDinner.getText().toString()));
@@ -161,8 +164,8 @@ public class InitFragment extends Fragment {
         if (item.getItemId() == R.id.mnuSave) {
             save(vm.getRestaurant());
             return true;
-        }else if(item.getItemId() == R.id.mnuShowList){
-                vm.getClickChangeFragmentEvent().setValue(true);
+        } else if (item.getItemId() == R.id.mnuShowList) {
+            vm.getClickChangeFragmentEvent().setValue(true);
             return true;
         }
         return super.onOptionsItemSelected(item);
